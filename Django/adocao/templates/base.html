@@ -1,258 +1,389 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Agency - Start Bootstrap Theme</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-  <!-- Custom styles for this template -->
-  <link href="{% static 'css/agency.css' %}" rel="stylesheet">
-
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+	<title>LAWFUL LAWFIRM</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+	<!-- main css -->
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 
-<body id="page-top">
-
-  {% block menu %}
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  {% endblock %}
-
-  {% block header %}
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text">
-        <div class="intro-lead-in">Welcome To Our Studio!</div>
-        <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
-      </div>
-    </div>
-  </header>
-  {% endblock %}
-
-  {% block conteudo %}
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endblock %}
-
-  
-  {% block clientes %}
-  <!-- Clients -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="{% static 'img/logos/envato.jpg' %}" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="{% static 'img/logos/designmodo.jpg' %}" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="{% static 'img/logos/themeforest.jpg' %}" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="{% static 'img/logos/creative-market.jpg' %}" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endblock %}
-
-  {% block contato %}
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Contact Us</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <form id="contactForm" name="sentMessage" novalidate="novalidate">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-              <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endblock %}
-
-  {% block rodape %}
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Your Website 2019</span>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  {% endblock %}
-
-  {% block javascript %}
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="{% static 'vendor/jquery-easing/jquery.easing.js' %}"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="{% static 'js/agency.js' %}"></script>
-  {% endblock %}
+<body>
+{% block menu %}
+	<!--================ Start Header Menu Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<div class="search_input" id="search_input_box">
+				<div class="container">
+					<form class="d-flex justify-content-between">
+						<input type="text" class="form-control" id="search_input" placeholder="Search Here">
+						<button type="submit" class="btn"></button>
+						<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+					</form>
+				</div>
+			</div>
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="Service.html">Service</a></li>
+							<li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+								</ul>
+							</li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Blog</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+								</ul>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						</ul>
+						<ul class="nav navbar-nav ml-auto">
+							<div class="social-icons d-flex align-items-center">
+								<a href="">
+									<li><i class="fa fa-facebook"></i></li>
+								</a>
+								<a href="">
+									<li><i class="fa fa-twitter"></i></li>
+								</a>
+								<a href="">
+									<li><i class="fa fa-dribbble"></i></li>
+								</a>
+								<a href="">
+									<li><i class="fa fa-behance"></i></li>
+								</a>
+							</div>
+							<li class="nav-item"><a href="#" class="search">
+								<i class="lnr lnr-magnifier" id="search"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================ End Header Menu Area =================-->
+{% endblock %}
+	<!--================ Start Home Banner Area =================-->
+	<section class="home_banner_area overlay">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="row fullscreen d-flex align-items-center justify-content-center">
+					<div class="banner_content">
+						<h2>
+							We Combine<br>
+							Business with Finance<br>
+						</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+							magna aliqua.
+						</p>
+						<a class="primary-btn text-uppercase" href="#">Get Free Quote</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Home Banner Area =================-->
 
 
-  {% block scripts %}
-  <script type="text/javascript">
 
-  </script>
-  {% endblock %}
+	<!--================ Start Video Area =================-->
+	<section class="video-sec-area section_gap_top" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 video-left overlay">
+					<div class="video-inner justify-content-center align-items-center d-flex">
+						<a id="play-home-video" class="video-play-button" href="https://www.youtube.com/watch?time_continue=2&v=J9YzcEe29d0">
+							<span></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-6 video-right">
+					<h1>Get to Know Project Estimate?</h1>
+					<p>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s
+						exciting to think about setting up your own viewing station whether that is on the deck.</p>
+					<a href="#" class="primary-btn">Learn More</a>
 
+					<div class="right-bottom-area">
+						<div class="author-lacture">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
+								aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod
+								tempor incididunt labore dolore magna aliqua enim minim veniam quis nostrud. Lorem ipsum dolor sit amet,
+								consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna aliqua enim minim veniam quis
+								nostrud.</p>
+							<div class="author-title">
+								<div class="thumb"><img src="img/about-author.png" alt=""></div>
+								<div class="a-desc">
+									<h6>Marvel Maison</h6>
+									<p>Chief Executive, Amazon</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- about -->
+	<section class="about-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="about-inner">
+						<div class="row">
+							<!-- single success -->
+							<div class="col-lg-6 col-md-6">
+								<div class="single-success">
+									<h5>Road to Success</h5>
+									<p>Lorem ipsum dolor sit amet, sed eiusmod tempor incididunt labore dolore magna.</p>
+								</div>
+							</div>
+							<!-- single success -->
+							<div class="col-lg-6 col-md-6">
+								<div class="single-success">
+									<h5>Road to Success</h5>
+									<p>Lorem ipsum dolor sit amet, sed eiusmod tempor incididunt labore dolore magna.</p>
+								</div>
+							</div>
+							<!-- single success -->
+							<div class="col-lg-6 col-md-6">
+								<div class="single-success">
+									<h5>Road to Success</h5>
+									<p>Lorem ipsum dolor sit amet, sed eiusmod tempor incididunt labore dolore magna.</p>
+								</div>
+							</div>
+							<!-- single success -->
+							<div class="col-lg-6 col-md-6">
+								<div class="single-success">
+									<h5>Road to Success</h5>
+									<p>Lorem ipsum dolor sit amet, sed eiusmod tempor incididunt labore dolore magna.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end about -->
+	<!--================ End video Area =================-->
+
+
+
+	<!--================ Start Blog Area =================-->
+	<section class="section_gap blog_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-7">
+					<div class="main_title">
+						<h2>Latest From Our Blog Posts</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt labore dolore magna
+							aliqua enim minim veniam quis nostrud.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<!-- single-blog -->
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="single-blog">
+						<div class="blog-thumb">
+							<img class="img-fluid" src="img/blog/h-blog1.jpg" alt="">
+						</div>
+						<div class="blog-details">
+							<div class="blog-meta">
+								<span>25 june, 2018 | By Mark Wiens</span>
+							</div>
+							<h5><a href="#">Addiction When Gambling <br>
+									Becomes A Problem</a></h5>
+							<p>Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in
+								front of their desktops.</p>
+						</div>
+					</div>
+				</div>
+				<!-- single-blog -->
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="single-blog">
+						<div class="blog-thumb">
+							<img class="img-fluid" src="img/blog/h-blog2.jpg" alt="">
+						</div>
+						<div class="blog-details">
+							<div class="blog-meta">
+								<span>25 june, 2018 | By Mark Wiens</span>
+							</div>
+							<h5><a href="#">Addiction When Gambling <br>
+									Becomes A Problem</a></h5>
+							<p>Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in
+								front of their desktops.</p>
+						</div>
+					</div>
+				</div>
+				<!-- single-blog -->
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="single-blog">
+						<div class="blog-thumb">
+							<img class="img-fluid" src="img/blog/h-blog3.jpg" alt="">
+						</div>
+						<div class="blog-details">
+							<div class="blog-meta">
+								<span>25 june, 2018 | By Mark Wiens</span>
+							</div>
+							<h5><a href="#">Addiction When Gambling <br>
+									Becomes A Problem</a></h5>
+							<p>Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in
+								front of their desktops.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Blog Area =================-->
+
+	<!--================  start footer Area =================-->
+	<footer class="footer-area">
+		<div class="footer_top section_gap_top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<h5 class="footer_title">About Lawful</h5>
+							<p class="about-text">The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point where images and videos are used more to </p>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<h5 class="footer_title">Navigation Links</h5>
+							<div class="row">
+								<div class="col-5">
+									<ul class="list">
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Features</a></li>
+										<li><a href="#">Services</a></li>
+										<li><a href="#">Portfolio</a></li>
+									</ul>
+								</div>
+								<div class="col-5">
+									<ul class="list">
+										<li><a href="#">Team</a></li>
+										<li><a href="#">Pricing</a></li>
+										<li><a href="#">Blog</a></li>
+										<li><a href="#">contact</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<h5>Newsletter</h5>
+							<p>For business professionals caught between high OEM price and mediocre print and graphic output, </p>
+							<div class="footer-newsletter" id="mc_embed_signup">
+								<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+								 method="get" class="form-inline">
+									<div class="d-flex flex-row">
+										<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+										 required="" type="email">
+										<button class="click-btn btn btn-default"><span class="lnr lnr-location" aria-hidden="true"></span></button>
+										<div style="position: absolute; left: -5000px;">
+											<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+										</div>
+									</div>
+									<div class="info"></div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3  col-md-6 col-sm-6">
+						<div class="single-footer-widget mail-chimp">
+							<h5 class="mb-20">Instragram Feed</h5>
+							<ul class="instafeed d-flex flex-wrap">
+								<li><img src="img/i1.jpg" alt=""></li>
+								<li><img src="img/i2.jpg" alt=""></li>
+								<li><img src="img/i3.jpg" alt=""></li>
+								<li><img src="img/i4.jpg" alt=""></li>
+								<li><img src="img/i5.jpg" alt=""></li>
+								<li><img src="img/i6.jpg" alt=""></li>
+								<li><img src="img/i7.jpg" alt=""></li>
+								<li><img src="img/i8.jpg" alt=""></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-12">
+						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+					</div>
+					<div class="col-lg-6 col-md-12 text-right">
+						<div class="social-icons">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--================ End footer Area =================-->
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="% static 'js/popper.js' %}"></script>
+	<script src="% static 'js/bootstrap.min.js' %}"></script>
+	<script src="% static 'js/stellar.js' %}"></script>
+	<script src="% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+	<script src="% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+	<script src="% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+	<script src="% static 'js/jquery.ajaxchimp.min.js'%}"></script>
+	<script src="% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+	<script src="% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+	<script src="% static 'js/mail-script.js' %}"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="% static 'js/gmaps.min.js' %}"></script>
+	<script src="% static 'js/theme.js' %}"></script>
 </body>
 
 </html>
