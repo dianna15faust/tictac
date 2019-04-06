@@ -19,3 +19,7 @@ class SobreView(TemplateView):
 # Página "Contato"
 class ContatoView(TemplateView):
     template_name = "contato.html"
+
+# Página "Curriculo"
+class CurriculoView(TemplateView):
+    template_name = "curriculo.html"
