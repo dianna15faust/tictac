@@ -1,227 +1,129 @@
 {% load static %}
 
-
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Dianna Aparecida Faust</title>
-
-  <!--  Importando o bootstrap 4 -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <style media="screen">
-  .bg-cinza-claro{
-    background-color: #CCCCCC;
-  }
-
-  .text-cinza-claro{
-    color: #CCCCCC
-  }
-
-  .cor-img{
-
-
-    background-color:  #800080;
-  }
+    <meta charset="utf-8">
+    <title>CURRICULO</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link href="{% static "plugins/font-awesome-4.7.0/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<style>
+    body{
+        font-family: 'Open Sans', sans-serif;
+    }
+    .text-purple{
+        color: #77418c;
+    }
+    .bg-purple{
+        background-color: #77418c;
+    }
+    .item{
+        width: 48px;
+        height: 48px;
+        text-align: center;
+    }
 </style>
-
 </head>
 <body>
-  <div class="container shadow-sm mt-3">
-    <div class="row border bg-light p-5 border   ">
-      <div class="col-sm text-left">
-
-        <h1 class=" ">Dianna</h1>
-        <h3 class="">Faust</h3>
-
-      </div>
-      <div class=" col-sm text-right   ">
-        <div class="">
-          <h5 class="  "> Amaporã - PR
-            <i class="fa fa-home" style="color: purple"></i>
-          </h5>
-          <h5 class="  ">99107-2571
-            <i class="fa fa-phone" style="color: purple"></i>
-          </h5>
-          <h5 class="  ">faustdianna.df@gmail.com
-            <i class="fa fa-envelope-open" style="color: purple"></i>
-          </h5>
-
-          <h5 class="  ">github.com/dianna15faust <a href=" https://github.com/Valdecir190199"
-            <i class="fa fa-github" style="color: purple"></i>
-            </a>
-
-          </h5>
-          <h5 class="  ">Facebook <a href="https://www.facebook.com/valdecir.junior.3194?ref=bookmarks"
-            <i class="fa fa-facebook" style="color: purple"></i>
-
-          </a>
-          </h5>
+    <div class="container-fluid bg-light p-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 pt-4">
+                    <h1>Dianna</h1>
+                    <h1 class="font-weight-bold" >Faust</h1>
+                </div>
+                <div class="col text-right" >
+                    <div>Rua Alípio Ferreira, 07 - Centro <i class="fa fa-home text-purple" aria-hidden="true"></i></div>
+                    <div>(44)99107-2571 <i class="fa fa-phone text-purple"></i></div>
+                    <div>faustdianna.df@gmail.com <i class="fa fa-envelope text-purple"></i></div>
+                    <div><a href="https://www.linkedin.com/in/dianna-faust-740318140/">LinkedIn </a> <i class="fab fa-linkedin text-purple"></i></div>
+                    <div><a href="https://twitter.com/diannafaust">Twitter</a> <i class="fa fa-globe text-purple"></i></div>
+                </div>
+            </div>
         </div>
-
-
-
-      </div>
-
     </div>
-    <!-- Fim do row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <div class="text-white rounded-circle bg-purple item"><i class="fa fa-bars py-3"></i></div>
+            </div>
+            <div class="col">
+                <h4 class="font-weight-bold py-2" >OBJETIVO</h4>
+                <p>Adquirir experiência na área e realizar um trabalho de qualidade para
+                    engrandecimento pessoal e da empresa.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <div class="text-purple rounded-circle bg-purple item" style="-webkit-text-stroke: 1px white;"> <i class="fa fa-graduation-cap py-3"></i></div>
+            </div>
+            <div class="col">
+                <h4 class="font-weight-bold py-2">EDUCAÇÃO</h4>
+                <h6 class="font-weight-bold">TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS | IFPR</h6>
+                <h6>DE 2017 ATÉ 2019</h6>
+                <p>Cursando o Terceiro ano do curso superior de Técnico em Análise e
+                    Desenvolvimento de Sistema do IFPR Campus Paranavaí.</p>
+                <h6 class="font-weight-bold">Ensino Médio Completo, Colégio Estadual Olavo Bilac</h6>
+                <h6>DE 2014 ATÉ 2016</h6>
+         <h6 class="font-weight-bold">Empregabilidade e o Mercado de Trabalho | SENAC</h6>
+                <h6>EM 2016</h6>
+     <h6 class="font-weight-bold">Atendente de Farmácia</h6>
+                <h6>EM 2015</h6>
+     <h6 class="font-weight-bold">Informática básica</h6>
+                <h6>EM 2015</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <div class="text-purple rounded-circle bg-purple item" style="-webkit-text-stroke: 1px white;"> <i class="fa fa-briefcase py-3"></i></div>
+            </div>
+            <div class="col">
+                <h4 class="font-weight-bold py-2" >EXPERIÊNCIA</h4>
+                <h6 class="font-weight-bold">Estagiária | Secretaria Municipal de Saúde, Amaporã-PR </h6>
+                <h6>DE 2017 ATÉ 2019 </h6>
+                <p>Atendimento ao Público;
+                   Atendimento ao Telefone;
+                   Área Administrativa;
+                   Alimentação de Sistemas Governamentais;</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <div class="text-purple rounded-circle bg-purple item" style="-webkit-text-stroke: 1px white;"> <i class="fa fa-wrench py-3"></i></div>
+            </div>
+            <div class="col">
+                <h4 class="font-weight-bold py-2" >HABILIDADES</h4>
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                        <li>Comunicativa, interativa, pontualidade, entre outros.</li>
 
-    <div class="row col-lg pt-5">
+                        <li>Experiêcia com liguagens de Banco de Dados(MySQL, PostgreSQL).</li>
 
-      <div class="col-lg pb-5">
+                        <li>Experiência com tecnologias Web(HTML, CSS, PrimeFaces, BootStrap, JSF, Angular).</li>
 
-
-        <h4 class="pt-3  font-weight-bold"><span class="p-3 pl-3  cor-img rounded-circle">
-          <i class="fa fa-bars" style=""></i>
-
-
-        </span> - OBJETIVO</h4>
-
-        <br>
-
-
-
-
-        <h5> <p class="pl-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p> </h5>
-      </div>
-
-
-
-
-
-
-
-
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <div class="text-white rounded-circle bg-purple item"> <i class="fa fa-ellipsis-h py-3"></i></div>
+            </div>
+            <div class="col">
+                <h4 class="font-weight-bold py-2" >ATIVIDADES</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   Praesent et leo arcu. Praesent luctus leo nec interdum scelerisque.
+                    Aenean efficitur sagittis ex, sed vulputate arcu tincidunt sed.
+                    Suspendisse faucibus risus sit amet est ullamcorper luctus.
+                    Quisque id purus tortor. Aliquam fermentum hendrerit lacus,
+                    a aliquam dui venenatis quis. Sed finibus neque leo, sit amet suscipit ligula viverra eu.
+                    Curabitur luctus sed tellus nec pharetra.</p>
+            </div>
+        </div>
     </div>
-
-
-
-    <div class="row col-lg pt-5">
-
-      <div class="col-lg pb-5">
-
-
-        <h4 class="pt-3  font-weight-bold"><span class="p-3 pl-3  cor-img rounded-circle">
-          <i class="fa fa-graduation-cap" style=""></i>
-
-
-        </span> - EDUCAÇÃO</h4>
-
-        <br>
-
-
-
-
-        <h5> <p class="pl-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p> </h5>
-      </div>
-
-
-
-
-
-
-
-
-    </div>
-
-    <div class="row col-lg pt-5">
-
-      <div class="col-lg pb-5">
-
-
-        <h4 class="pt-3  font-weight-bold"><span class="p-3 pl-3  cor-img rounded-circle">
-          <i class="fa fa-suitcase" style=""></i>
-
-
-        </span> - EXPERIÊNCIA</h4>
-
-        <br>
-
-
-
-
-        <h5> <p class="pl-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p> </h5>
-      </div>
-
-
-
-
-
-
-
-
-    </div>
-
-
-    <div class="row col-lg pt-5">
-
-      <div class="col-lg pb-5">
-
-
-        <h4 class="pt-3  font-weight-bold"><span class="p-3 pl-3  cor-img rounded-circle">
-          <i class="fa fa-cog" style=""></i>
-
-
-        </span> - HABILIDADES</h4>
-
-        <br>
-
-
-
-
-        <h5> <p class="pl-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p> </h5>
-      </div>
-
-
-
-
-
-
-
-
-    </div>
-
-
-    <div class="row col-lg pt-5">
-
-      <div class="col-lg pb-5">
-
-
-        <h4 class="pt-3  font-weight-bold"> <span class="p-3 pl-3  cor-img rounded-circle">
-          <i class="" style=""></i> ...
-
-
-        </span> - ATIVIDADE</h4>
-
-        <br>
-
-
-
-
-        <h5> <p class="pl-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p> </h5>
-      </div>
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-
-
 </body>
 </html>

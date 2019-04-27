@@ -1,107 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block header %}
+{{ block.super }}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.png" type="image/png">
-	<title>LAWFUL LAWFIRM</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-	<link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
-	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-	<link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
-	<link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
-	<link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
-	<link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
-	<!-- main css -->
-	<link rel="stylesheet" href="{% static 'css/style.css'%}">
-</head>
-
-<body>
-{% block menu %}
-<header class="header_area">
-		<nav class="navbar navbar-expand-lg navbar-light">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-					<ul class="nav navbar-nav menu_nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							 aria-expanded="false">Informações</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
-								<li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
-							</ul>
-						</li>
-						<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Cordenador</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="elements.html">Curriculo</a></li>
-								</ul>
-							</li>
-					</ul>
-					<ul class="nav navbar-nav ml-auto">
-						<div class="social-icons d-flex align-items-center">
-							<a href="">
-								<li><i class="fa fa-facebook"></i></li>
-							</a>
-							<a href="">
-								<li><i class="fa fa-twitter"></i></li>
-							</a>
-						</div>
-						<li class="nav-item"><a href="#" class="search">
-							<i class="lnr lnr-magnifier" id="search"></i></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
-</header>
-	<!--================ End Header Menu Area =================-->
 {% endblock %}
+{% block texto %}
 
-<!--================ Start Home Banner Area =================-->
-<section class="home_banner_area overlay">
-	<div class="banner_inner">
-		<div class="container">
-			<div class="row fullscreen d-flex align-items-center justify-content-center">
-				<div class="banner_content">
-					<h2>
-						Trabalho<br>
-						Tópicos Especiais Em Tecnologia <br>
-					</h2>
-					<p>
-						Turma : 3º ano TADS.  <br>
-						Professor: Rafael Zottesso
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--================ End Home Banner Area =================-->
 <section class="contact_area section_gap">
 		<div class="container">
-			<div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-			 data-mlat="40.701083" data-mlon="-74.1522848">
-			</div>
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="contact_info">
@@ -125,22 +31,22 @@
 					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Digte seu nome"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digte seu nome'">
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" id="email" name="email" placeholder="Enter email address"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Digte seu E-mail"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digte seu E-mail'">
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'">
+								<input type="text" class="form-control" id="subject" name="subject" placeholder="Digite seu Telefone"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu Telefone'">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"></textarea>
+								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Mensagem"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensagem'"></textarea>
 							</div>
 						</div>
 						<div class="col-md-12 text-right">
@@ -150,27 +56,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<!--================Contact Area =================-->
+	</div>
+</section>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="% static 'js/jquery-3.2.1.min.js' %}"></script>
-	<script src="% static 'js/popper.js' %}"></script>
-	<script src="% static 'js/bootstrap.min.js' %}"></script>
-	<script src="% static 'js/stellar.js' %}"></script>
-	<script src="% static 'js/jquery.magnific-popup.min.js' %}"></script>
-	<script src="% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
-	<script src="% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
-	<script src="% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
-	<script src="% static 'js/jquery.ajaxchimp.min.js'%}"></script>
-	<script src="% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
-	<script src="% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
-	<script src="% static 'js/mail-script.js' %}"></script>
-	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="% static 'js/gmaps.min.js' %}"></script>
-	<script src="% static 'js/theme.js' %}"></script>
-</body>
-
-</html>
+{% endblock %}

@@ -1,8 +1,48 @@
 {% extends 'base.html' %}
-
-{% block menu %}
-
+{% load static %}
+{% block header %}
 {{ block.super }}
 
+{% endblock %}
+{% block texto %}
+
+<section class="service-area-2 section_gap">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-lg-6">
+					<div class="service-2-left">
+						<div class="get-know">
+							<h1 class="df-color">Você deseja saber tudo sobre a melhor Biblioteca Digital?</h1>
+							<p>O intuito é faturar um notazo, em outras palavras um conceito " TOPEN TOPEN TOPEN ", para obtermos aquele sonhado canudinho.
+                Entretanto neste sonho também pensamos em você, incentivando a leitura, a procurar de conhecimento, a liberdade de expressão,
+                para você plantar novas palavras, histórias, junto com conosco. </p>
+						</div>
+						<div class="author-lacture">
+							<p>O sistema irá seguir o seguinte Digrama de Classe, onde consta cadastro de livro, usuário, etc.</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="service-2-right">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="left-image">
+										<div class="s-img"><img class="img-fluid" src="{% static 'img/service/service4.jpg'%}" alt=""></div>
+										<div class="s-img"><img class="img-fluid" src="{% static 'img/service/service5.jpg'%}" alt=""></div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="right-image">
+									<div class="s-img"><img class="img-fluid" src="img/service/service6.jpg" alt=""></div>
+									<div class="s-img"><img class="img-fluid" src="img/service/service7.jpg" alt=""></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 {% endblock %}
