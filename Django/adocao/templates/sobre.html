@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block header %}
 {{ block.super }}
 
@@ -17,32 +18,21 @@
                 Entretanto neste sonho também pensamos em você, incentivando a leitura, a procurar de conhecimento, a liberdade de expressão,
                 para você plantar novas palavras, histórias, junto com conosco. </p>
 						</div>
-						<div class="author-lacture">
-							<p>O sistema irá seguir o seguinte Digrama de Classe, onde consta cadastro de livro, usuário, etc.</p>
+						</div>
 
-						</div>
+						<h1 class="df-color">Diagrama de Classe: </h1>
+						<p>O sistema irá seguir o seguinte Digrama de Classe, onde o leitor tem toda liberdade para nos enviar suas literaturas,
+							que será avaliada e ápos aprovação será publicadas, além d epoder comentar expressando suas opinião sobre nosso acervo.[...]
+							 <img  src="{% static 'img/diagrama.png'%}" alt="">
+
+						</p>
+
 					</div>
 				</div>
-				<div class="col-lg-6">
-					<div class="service-2-right">
-						<div class="row">
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="left-image">
-										<div class="s-img"><img class="img-fluid" src="{% static 'img/service/service4.jpg'%}" alt=""></div>
-										<div class="s-img"><img class="img-fluid" src="{% static 'img/service/service5.jpg'%}" alt=""></div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 col-sm-6">
-								<div class="right-image">
-									<div class="s-img"><img class="img-fluid" src="img/service/service6.jpg" alt=""></div>
-									<div class="s-img"><img class="img-fluid" src="img/service/service7.jpg" alt=""></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</section>
+
 
 {% endblock %}
