@@ -51,7 +51,7 @@ class EstadoCreate(CreateView):
 
         context['titulo'] = "Cadastro de novos Estados"
         context['botao'] = "Cadastrar"
-
+        context['classeBotao'] = "btn-danger"
         return context
 
 
@@ -66,7 +66,7 @@ class CidadeCreate(CreateView):
 
         context['titulo'] = "Cadastro de novas Cidades"
         context['botao'] = "Cadastrar"
-
+        context['classeBotao'] = "btn-danger"
         return context
 
 ####################################### ALTERAR #########################################################################
@@ -86,6 +86,7 @@ class EstadoUpdate(UpdateView):
 
         context['titulo'] = "Alterar Estados"
         context['botao'] = "Alterar"
+        context['classeBotao'] = "btn-danger"
 
         return context
 
@@ -100,5 +101,40 @@ class CidadeUpdate(UpdateView):
 
         context['titulo'] = "Alterar Cidades"
         context['botao'] = "Alterar"
+        context['classeBotao'] = "btn-danger"
 
+        return context
+
+####################################### DELETAR #########################################################################
+
+class EstadoDelete(DeleteView): 
+    #Define qual o modelo pra essa classe que vai criar o form
+    model = Estado
+    #Qual o html que será utilizado
+    template_name = "adocao/formulario.html"
+    #Para onde redirecionar o usuário depois de excluir um registro. Informe o nome
+    success_url = reverse_lazy("index")
+
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(EstadoDelete, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Deseja excluir esse registro?"
+        context['botao'] = "Excluir"
+        context['classeBotao'] = "btn-danger"
+        return context
+
+
+class CidadeDelete(DeleteView):
+    model = Cidade
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['nome', 'estado', 'descricao']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(CidadeDelete, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Deseja excluir esse registro?"
+        context['botao'] = "Excluir"
+        context['classeBotao'] = "btn-danger"
         return context
