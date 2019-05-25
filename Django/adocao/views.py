@@ -1,5 +1,15 @@
 from django.shortcuts import render
 
+#Importa todas as classes do models.py
+from .models import *
+
+#Importação que chamas as URL's pelo "name" delas
+from django.urls import reverse_lazy
+
+#Importar as classes Views para inserir. alterar e excluir
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+#IMporta o TemplateView para criação de páginas simples
 from django.views.generic import TemplateView
 
 
@@ -10,16 +20,85 @@ from django.views.generic import TemplateView
 class PaginaInicialView(TemplateView):
     # Nome do arquivo que vai ser utilizado para renderizar
     # esta página/método/classe
-    template_name = "index.html"
+    template_name = "adocao/index.html"
 
 # Página "Sobre"
 class SobreView(TemplateView):
-    template_name = "sobre.html"
+    template_name = "adocao/sobre.html"
 
 # Página "Contato"
 class ContatoView(TemplateView):
-    template_name = "contato.html"
+    template_name = "adocao/contato.html"
 
 # Página "Curriculo"
 class CurriculoView(TemplateView):
-    template_name = "curriculo.html"
+    template_name = "adocao/curriculo.html"
+
+####################################### INSERIR #########################################################################
+
+class EstadoCreate(CreateView): 
+    #Define qual o modelo pra essa classe que vai criar o form
+    model = Estado
+    #Qual o html que será utilizado
+    template_name = "adocao/formulario.html"
+    #Para onde redirecionar o usuário depois de inserir um registro. Informe o nome
+    success_url = reverse_lazy("index")
+    #Quais campos devem aparecer no formulario?
+    fields = ['sigla', 'nome']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(EstadoCreate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Cadastro de novos Estados"
+        context['botao'] = "Cadastrar"
+
+        return context
+
+
+class CidadeCreate(CreateView):
+    model = Cidade
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['nome', 'estado', 'descricao']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(CidadeCreate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Cadastro de novas Cidades"
+        context['botao'] = "Cadastrar"
+
+        return context
+
+####################################### ALTERAR #########################################################################
+
+class EstadoUpdate(UpdateView): 
+    #Define qual o modelo pra essa classe que vai criar o form
+    model = Estado
+    #Qual o html que será utilizado
+    template_name = "adocao/formulario.html"
+    #Para onde redirecionar o usuário depois de inserir um registro. Informe o nome
+    success_url = reverse_lazy("index")
+    #Quais campos devem aparecer no formulario?
+    fields = ['sigla', 'nome']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(EstadoUpdate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Alterar Estados"
+        context['botao'] = "Alterar"
+
+        return context
+
+class CidadeUpdate(UpdateView):
+    model = Cidade
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['nome', 'estado', 'descricao']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(CidadeUpdate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Alterar Cidades"
+        context['botao'] = "Alterar"
+
+        return context
