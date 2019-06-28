@@ -12,6 +12,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 #IMporta o TemplateView para criação de páginas simples
 from django.views.generic import TemplateView
 
+from django.views.generic.list import ListView
+
 
 # Create your views here.
 
@@ -138,3 +140,9 @@ class CidadeDelete(DeleteView):
         context['botao'] = "Excluir"
         context['classeBotao'] = "btn-danger"
         return context
+
+####################################### LISTAR #########################################################################
+
+class EstadoList(ListView):
+    model = Estado
+    template_name = "adocao/lista_estado.html"

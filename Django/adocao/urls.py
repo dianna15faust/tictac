@@ -18,4 +18,5 @@ urlpatterns = [
     path('editar/cidade/<int:pk>/', CidadeUpdate.as_view(), name="editar-cidade"),
     path('excluir/estado/<int:pk>/', EstadoDelete.as_view(), name="deletar-estado"),
     path('excluir/cidade/<int:pk>/', CidadeDelete.as_view(), name="deletar-cidade"),
+    path('lista/estado/', EstadoList.as_view(), name="lista_estado"),
 ]

@@ -1,0 +1,55 @@
+{% extends 'adocao/base.html' %}
+
+{% load static %}
+
+{% block texto %}
+<div class="container py-5">
+    <div class="row mt-5">
+        <div class="col-lg">
+           <h3 class="border-bottom"> 
+            Lista de Estados Cadastrados
+
+            <a href="{% url 'cadastrar-estado' %}" class="float-right btn btn-primary btn-sm">
+                Novo Estado
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Sigla</th>
+                        <th>Nome</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for estado in object_list %}
+                    <tr>
+                        <td>{{estado.sigla}}</td>
+                        <td>{{estado.nome}}</td>
+                        <td>
+                            <a href="{% url 'editar-estado' estado.pk %}" class="btn btn-outline-warning btn-sm"> 
+                                Editar
+                            </a>
+                            <a href="{% url 'deletar-estado' estado.pk %}" class="btn btn-outline-danger btn-sm"> 
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3">Nenhuma cidade cadastrada!</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
