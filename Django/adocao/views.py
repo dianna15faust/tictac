@@ -107,6 +107,21 @@ class CidadeUpdate(UpdateView):
 
         return context
 
+class PessoaUpdate(UpdateView):
+    model = Pessoa
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['nome', 'estado', 'descricao']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(CidadeUpdate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Alterar Cidades"
+        context['botao'] = "Alterar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
 ####################################### DELETAR #########################################################################
 
 class EstadoDelete(DeleteView): 
