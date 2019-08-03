@@ -43,8 +43,9 @@
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 							 aria-expanded="false">Cadastrar</a>
 							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="">Usuário</a></li>
-								<li class="nav-item"><a class="nav-link" href="">Contato</a></li>
+								<li class="nav-item"><a class="nav-link" href=""> Cadastrar Usuário</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-estado' %}">Cadastrar Estado</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-cidade' %}">Cadastrar Cidade</a></li>
 							</ul>
 						</li>
 						<li class="nav-item submenu dropdown">
@@ -63,19 +64,29 @@
 								</ul>
 							</li>
 					</ul>
-					<ul class="nav navbar-nav ml-auto">
-						<div class="social-icons d-flex align-items-center">
-							<a href="">
-								<li><i class="fa fa-facebook"></i></li>
-							</a>
-							<a href="">
-								<li><i class="fa fa-twitter"></i></li>
-							</a>
-						</div>
-						<li class="nav-item"><a href="#" class="search">
-							<i class="lnr lnr-magnifier" id="search"></i></a>
+					
+					<ul class="navbar-nav ml-auto">
+						{% if request.user.is_authenticated %}
+						<li class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							{{ request.user.username }}
+						  </a>
+						  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="{% url 'logout' %}">
+							  <i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
+						  </div>
 						</li>
-					</ul>
+						{% else %}
+						<li class="nav-item">
+						  <a class="nav-link" href="{% url 'login' %}">
+							<i class="fa fa-sign-in" aria-hidden="true"></i>
+							Entrar
+						  </a>
+						</li>
+						{% endif %}
+					  </ul>
 				</div>
 			</div>
 		</nav>

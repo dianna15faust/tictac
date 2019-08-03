@@ -14,6 +14,9 @@ from django.views.generic import TemplateView
 
 from django.views.generic.list import ListView
 
+#Importa o Mixin para obrigar login
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # Create your views here.
 
@@ -38,7 +41,7 @@ class CurriculoView(TemplateView):
 
 ####################################### INSERIR #########################################################################
 
-class EstadoCreate(CreateView): 
+class EstadoCreate(LoginRequiredMixin, CreateView): 
     #Define qual o modelo pra essa classe que vai criar o form
     model = Estado
     #Qual o html que será utilizado
@@ -57,7 +60,7 @@ class EstadoCreate(CreateView):
         return context
 
 
-class CidadeCreate(CreateView):
+class CidadeCreate(LoginRequiredMixin, CreateView):
     model = Cidade
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')

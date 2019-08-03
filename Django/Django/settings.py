@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'adocao.apps.AdocaoConfig', # ativa este módulo
+    'usuarios.apps.UsuariosConfig',
     'crispy_forms', #Usa o bs4 o módulo form
 ]
 
@@ -126,3 +127,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# Nome da URL em que o usuário será redirecionado
+# https://docs.djangoproject.com/en/2.1/ref/settings/#auth
+LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login' 

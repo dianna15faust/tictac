@@ -19,4 +19,5 @@ urlpatterns = [
     path('excluir/estado/<int:pk>/', EstadoDelete.as_view(), name="deletar-estado"),
     path('excluir/cidade/<int:pk>/', CidadeDelete.as_view(), name="deletar-cidade"),
     path('lista/estado/', EstadoList.as_view(), name="lista_estado"),
+    path('cadastrar/pessoa/', PessoaCreate.as_view(), name="cadastrar-pessoa")
 ]
