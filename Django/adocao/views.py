@@ -74,6 +74,22 @@ class CidadeCreate(LoginRequiredMixin, CreateView):
         context['classeBotao'] = "btn-danger"
         return context
 
+
+class PessoaCreate(LoginRequiredMixin, CreateView):
+    model = Pessoa
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['nome', 'nascimento' , 'email', 'telefone', 'endereco', 'cidade']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PessoaCreate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Cadastro de novas Pessoas"
+        context['botao'] = "Cadastrar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
 ####################################### ALTERAR #########################################################################
 
 class EstadoUpdate(UpdateView): 
@@ -114,12 +130,12 @@ class PessoaUpdate(UpdateView):
     model = Pessoa
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['nome', 'estado', 'descricao']
+    fields = ['nome', 'nascimento' , 'email', 'telefone', 'endereco', 'cidade']
 
     def get_context_data(self, *args, **kwargs):
-        context = super(CidadeUpdate, self).get_context_data(*args, **kwargs)
+        context = super(PessoaUpdate, self).get_context_data(*args, **kwargs)
 
-        context['titulo'] = "Alterar Cidades"
+        context['titulo'] = "Alterar Pessoa"
         context['botao'] = "Alterar"
         context['classeBotao'] = "btn-danger"
 
@@ -157,6 +173,21 @@ class CidadeDelete(DeleteView):
         context['titulo'] = "Deseja excluir esse registro?"
         context['botao'] = "Excluir"
         context['classeBotao'] = "btn-danger"
+        return context
+        
+class PessoaDelete(DeleteView):
+    model = Pessoa
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['nome', 'nascimento' , 'email', 'telefone', 'endereco', 'cidade']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PessoaDelete, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Deseja excluir essa Pessoa ? "
+        context['botao'] = "Excluir"
+        context['classeBotao'] = "btn-danger"
+
         return context
 
 ####################################### LISTAR #########################################################################

@@ -43,7 +43,7 @@
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 							 aria-expanded="false">Cadastrar</a>
 							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href=""> Cadastrar Usuário</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-pessoa' %}"> Cadastrar Usuário</a></li>
 								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-estado' %}">Cadastrar Estado</a></li>
 								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-cidade' %}">Cadastrar Cidade</a></li>
 							</ul>
@@ -52,8 +52,8 @@
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 							 aria-expanded="false">Informações</a>
 							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="sobre">Sobre</a></li>
-								<li class="nav-item"><a class="nav-link" href="contato">Contato</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'sobre' %}">Sobre</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'contato' %}">Contato</a></li>
 							</ul>
 						</li>
 						<li class="nav-item submenu dropdown">

@@ -24,7 +24,8 @@ class Pessoa(models.Model):
     nome        = models.CharField(max_length=50, verbose_name="Qual seu nome?", help_text="Digite seu nome completo")
     nascimento  = models.DateField(verbose_name='data de nascimento')
     email       = models.CharField(max_length=100)
-    tefelone    = models.CharField(max_length=20)
+    telefone    = models.CharField(max_length=20, help_text="(DD) XXXX-XXXX")
+    endereco   = models.CharField(max_length=100)
 
     cidade      = models.ForeignKey(Cidade, on_delete=models.PROTECT)
 
