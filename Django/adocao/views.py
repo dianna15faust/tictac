@@ -27,6 +27,7 @@ class PaginaInicialView(TemplateView):
     # esta página/método/classe
     template_name = "adocao/index.html"
 
+
 # Página "Sobre"
 class SobreView(TemplateView):
     template_name = "adocao/sobre.html"

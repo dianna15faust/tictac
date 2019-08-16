@@ -13,15 +13,22 @@
 <div class="container">
 
   <div class="row">
+    <div class="col-lg mt-5 px-5">
 
-    <div class="col-lg-12 text-center my-5 p-5 border border-primary">
+      {% if request.user.is_authenticated %}
 
-      <h3></h3>
+      <h3>Olá {{ request.user.username }}, bem vindo ao sistema!</h3>
+
+      <h5>Seu último login foi em: {{ request.user.last_login }}</h5>
+
+      {% else %}
+
+      <h3>Olá visitante, faça login para poder acessar todas as funcionalidades.</h3>
+
+      {% endif %}
 
     </div>
-
   </div>
-
 </div>
 
 {% endblock %}
