@@ -43,6 +43,11 @@
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 							 aria-expanded="false">Cadastrar</a>
 							<ul class="dropdown-menu">
+
+								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-acervo' %}">Cadastrar Acervo</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-locacao' %}">Cadastrar Locação</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-admin' %}">Cadastrar Admin</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-leitor' %}">Cadastrar Leitor</a></li>
 								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-pessoa' %}"> Cadastrar Usuário</a></li>
 								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-estado' %}">Cadastrar Estado</a></li>
 								<li class="nav-item"><a class="nav-link" href="{% url 'cadastrar-cidade' %}">Cadastrar Cidade</a></li>
@@ -54,7 +59,12 @@
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link" href=""> Listar Usuário</a></li>
 								<li class="nav-item"><a class="nav-link" href="{% url 'lista_estado' %}">Listar Estado</a></li>
-								<li class="nav-item"><a class="nav-link" href="">Listar Cidade</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'lista_cidade' %}">Listar Cidade</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'lista_pessoa' %}">Listar Pessoa</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'lista_admin' %}">Listar Admin </a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'lista_leitor' %}">Listar Leitor</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'lista_acervo' %}">Listar Acervo</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'lista_locacao' %}">Listar Locação</a></li>
 							</ul>
 						</li>
 						<li class="nav-item submenu dropdown">
@@ -77,29 +87,28 @@
 					<ul class="navbar-nav ml-auto">
 						{% if request.user.is_authenticated %}
 						<li class="nav-item dropdown">
-						  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">
 							{{ request.user.username }}
-						  </a>
-						  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="{% url 'alterar-senha' %}">
-							  <i class="fa fa-key" aria-hidden="true"></i> Alterar senha</a>
+								<i class="fa fa-key" aria-hidden="true"></i> Alterar senha</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="{% url 'logout' %}">
-							  <i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
-						  </div>
+								<i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
+							</div>
 						</li>
 						{% else %}
 						<li class="nav-item">
-						  <a class="nav-link" href="{% url 'login' %}">
+							<a class="nav-link" href="{% url 'login' %}">
 							<i class="fa fa-sign-in" aria-hidden="true"></i>
 							Entrar
-						  </a>
+							</a>
 						</li>
 						{% endif %}
-					  </ul>
-					  
-			  <!-- Fim do menu -->
+						</ul>
+					  <!-- Fim do menu -->
 				</div>
 			</div>
 		</nav>

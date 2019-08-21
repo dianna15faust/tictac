@@ -42,7 +42,7 @@ class CurriculoView(TemplateView):
 
 ####################################### INSERIR #########################################################################
 
-class EstadoCreate(LoginRequiredMixin, CreateView): 
+class EstadoCreate(LoginRequiredMixin, CreateView):
     #Define qual o modelo pra essa classe que vai criar o form
     model = Estado
     #Qual o html que será utilizado
@@ -91,9 +91,67 @@ class PessoaCreate(LoginRequiredMixin, CreateView):
 
         return context
 
+class AdminCreate(LoginRequiredMixin, CreateView):
+    model = Admin
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['cpf', 'carteira_trabalho', 'pessoa' ]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AdminCreate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Cadastro do Admin"
+        context['botao'] = "Cadastrar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
+class LeitorCreate(LoginRequiredMixin, CreateView):
+    model = Admin
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['cartao_credito', 'pessoa' ]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(LeitorCreate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Cadastro do Leitor"
+        context['botao'] = "Cadastrar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
+class AcervoCreate(LoginRequiredMixin, CreateView):
+    model = Admin
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['titulo','genero','descricao' ]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AcervoCreate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Cadastro do Acervo"
+        context['botao'] = "Cadastrar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+class LocacaoCreate(LoginRequiredMixin, CreateView):
+    model = Admin
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['valor','data_entrega','data_devolucao','multa' ]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(LocacaoCreate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Locar"
+        context['botao'] = "Cadastrar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
 ####################################### ALTERAR #########################################################################
 
-class EstadoUpdate(UpdateView): 
+class EstadoUpdate(UpdateView):
     #Define qual o modelo pra essa classe que vai criar o form
     model = Estado
     #Qual o html que será utilizado
@@ -142,9 +200,68 @@ class PessoaUpdate(UpdateView):
 
         return context
 
+class AdminUpdate(UpdateView):
+    model = Pessoa
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['cpf', 'carteira_trabalho', 'pessoa']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AdminUpdate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Alterar Admin"
+        context['botao'] = "Alterar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
+class LeitorUpdate(UpdateView):
+    model = Pessoa
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['cartao_credito', 'pessoa' ]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(LeitorUpdate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Alterar Leitor"
+        context['botao'] = "Alterar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
+class AcervoUpdate(UpdateView):
+    model = Pessoa
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['titulo','genero','descricao' ]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AcervoUpdate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Alterar Acervo"
+        context['botao'] = "Alterar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+class LocacaoUpdate(UpdateView):
+    model = Pessoa
+    template_name = 'adocao/formulario.html'
+    success_url = reverse_lazy('index')
+    fields = ['valor','data_entrega','data_devolucao','multa' ]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(LocacaoUpdate, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Alterar Locação"
+        context['botao'] = "Alterar"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
 ####################################### DELETAR #########################################################################
 
-class EstadoDelete(DeleteView): 
+class EstadoDelete(DeleteView):
     #Define qual o modelo pra essa classe que vai criar o form
     model = Estado
     #Qual o html que será utilizado
@@ -159,6 +276,7 @@ class EstadoDelete(DeleteView):
         context['titulo'] = "Deseja excluir esse registro?"
         context['botao'] = "Excluir"
         context['classeBotao'] = "btn-danger"
+
         return context
 
 
@@ -174,8 +292,9 @@ class CidadeDelete(DeleteView):
         context['titulo'] = "Deseja excluir esse registro?"
         context['botao'] = "Excluir"
         context['classeBotao'] = "btn-danger"
+
         return context
-        
+
 class PessoaDelete(DeleteView):
     model = Pessoa
     template_name = 'adocao/formulario.html'
@@ -190,9 +309,94 @@ class PessoaDelete(DeleteView):
         context['classeBotao'] = "btn-danger"
 
         return context
+class   AdminDelete(DeleteView):
+    #Define qual o modelo pra essa classe que vai criar o form
+    model = Admin
+    #Qual o html que será utilizado
+    template_name = "adocao/formulario.html"
+    #Para onde redirecionar o usuário depois de excluir um registro. Informe o nome
+    success_url = reverse_lazy("index")
+
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AdminDelete, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Deseja excluir esse registro?"
+        context['botao'] = "Excluir"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+class LeitorDelete(DeleteView):
+    #Define qual o modelo pra essa classe que vai criar o form
+    model = Leitor
+    #Qual o html que será utilizado
+    template_name = "adocao/formulario.html"
+    #Para onde redirecionar o usuário depois de excluir um registro. Informe o nome
+    success_url = reverse_lazy("index")
+
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(LeitorDelete, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Deseja excluir esse registro?"
+        context['botao'] = "Excluir"
+        context['classeBotao'] = "btn-danger"
+
+        return context
+
+class AcervoDelete(DeleteView):
+    #Define qual o modelo pra essa classe que vai criar o form
+    model = Acervo
+    #Qual o html que será utilizado
+    template_name = "adocao/formulario.html"
+    #Para onde redirecionar o usuário depois de excluir um registro. Informe o nome
+    success_url = reverse_lazy("index")
+
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AcervoDelete, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Deseja excluir esse registro?"
+        context['botao'] = "Excluir"
+        context['classeBotao'] = "btn-danger"
+        return context
+class LocacaoDelete(DeleteView):
+    #Define qual o modelo pra essa classe que vai criar o form
+    model = Locacao
+    #Qual o html que será utilizado
+    template_name = "adocao/formulario.html"
+    #Para onde redirecionar o usuário depois de excluir um registro. Informe o nome
+    success_url = reverse_lazy("index")
+
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(LocacaoDelete, self).get_context_data(*args, **kwargs)
+
+        context['titulo'] = "Deseja excluir esse registro?"
+        context['botao'] = "Excluir"
+        context['classeBotao'] = "btn-danger"
+        return context
 
 ####################################### LISTAR #########################################################################
 
 class EstadoList(ListView):
     model = Estado
     template_name = "adocao/lista_estado.html"
+class CidadeList(ListView):
+    model = Cidade
+    template_name = "adocao/lista_cidade.html"
+class PessoaList(ListView):
+    model = Pessoa
+    template_name = "adocao/lista_pessoa.html"
+class AdminList(ListView):
+    model = Admin
+    template_name = "adocao/lista_admin.html"
+class LeitorList(ListView):
+    model = Leitor
+    template_name = "adocao/lista_leitor.html"
+class AcervoList(ListView):
+    model = Acervo
+    template_name = "adocao/lista_acervo.html"
+class LocacaoList(ListView):
+    model = Locacao
+    template_name = "adocao/lista_locacao.html"

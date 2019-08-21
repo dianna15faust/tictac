@@ -5,3 +5,7 @@ from .models import *
 admin.site.register(Estado)
 admin.site.register(Cidade)
 admin.site.register(Pessoa)
+admin.site.register(Leitor)
+admin.site.register(Admin)
+admin.site.register(Acervo)
+admin.site.register(Locacao)

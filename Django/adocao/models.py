@@ -58,12 +58,16 @@ class Acervo(models.Model):
     descricao    = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nome + ' - ' + str(self.nascimento)
-class Pessoa(models.Model):
+        return self.nome + ' - ' + str(self.genero)
 
-    nome        = models.CharField(max_length=50, verbose_name="Qual seu nome?", help_text="Digite seu nome completo")
-    genero       = models.CharField(max_length=100)
-    descricao    = models.CharField(max_length=100)
+class Locacao(models.Model):
+
+    valor         = models.CharField(max_length=50)
+    data_entrega  = models.DateField(verbose_name='data da locação')
+    data_devolucao    = models.DateField(verbose_name='data de devolução')
+    multa         = models.CharField(max_length=50)
+
+    acervo        = models.ForeignKey(Acervo, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nome + ' - ' + str(self.genero)
+        return self.acervo.titulo + ' - ' + str(self.valor)
