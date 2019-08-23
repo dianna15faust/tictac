@@ -5,36 +5,47 @@
 {% load crispy_forms_tags %}
 {% block texto %}
 <div class="container py-5">
+
     <div class="row mt-5">
-        <div class="col-lg-3">
-            <h3>{{titulo}}</h3>
+        <div class="col-lg">
+            <h3>{{ titulo }}</h3>
 
             {% if botao == 'Excluir' %}
-            <h4>{{ object }}</h4>
+            <hr>
+            <h4 class="font-weight-normal">Registro a excluir: {{ object }}</h4>
+            <hr>
             {% endif %}
+
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col-lg-3">
-          
+
+    <div class="row">
+        <div class="col-lg-5">
+
             <form method="post">
-                <!--todo formulario tem que ter essa validação-->
+
+                <!-- Todo formulário tem que ter essa validação -->
                 {% csrf_token %}
 
-                <!--Gera o formulario-->
+                <!-- Gera o formulário -->
                 {{ form|crispy }}
 
-                <!--Cria um botãopara submeter o form e outro p/ voltar-->
-                <button type="submit" class="btn btn-danger">
-                    {{botao}}
+                <!-- Cria um botão para submeter o form e outro para voltar -->
+                <button type="submit" class="btn {{ classeBotao }}">
+                    {{ botao }}
                 </button>
 
-                <a href="{% url 'index' %}" class="btn btn-secondary">Voltar</a>
+                <a href="{% url 'index' %}" class="btn btn-secondary">
+                    Voltar
+                </a>
+
 
             </form>
 
         </div>
+
     </div>
+
 </div>
 
 {% endblock %}

@@ -80,7 +80,7 @@ class PessoaCreate(LoginRequiredMixin, CreateView):
     model = Pessoa
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['nome', 'nascimento' , 'email', 'telefone', 'endereco', 'cidade']
+    fields = ['nome', 'nascimento' , 'email', 'endereco', 'cidade']
 
     def get_context_data(self, *args, **kwargs):
         context = super(PessoaCreate, self).get_context_data(*args, **kwargs)
@@ -107,10 +107,10 @@ class AdminCreate(LoginRequiredMixin, CreateView):
         return context
 
 class LeitorCreate(LoginRequiredMixin, CreateView):
-    model = Admin
+    model = Leitor
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['cartao_credito', 'pessoa' ]
+    fields = ['cartao', 'pessoa' ]
 
     def get_context_data(self, *args, **kwargs):
         context = super(LeitorCreate, self).get_context_data(*args, **kwargs)
@@ -122,7 +122,7 @@ class LeitorCreate(LoginRequiredMixin, CreateView):
         return context
 
 class AcervoCreate(LoginRequiredMixin, CreateView):
-    model = Admin
+    model = Acervo
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
     fields = ['titulo','genero','descricao' ]
@@ -136,7 +136,7 @@ class AcervoCreate(LoginRequiredMixin, CreateView):
 
         return context
 class LocacaoCreate(LoginRequiredMixin, CreateView):
-    model = Admin
+    model = Locacao
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
     fields = ['valor','data_entrega','data_devolucao','multa' ]
@@ -189,7 +189,7 @@ class PessoaUpdate(UpdateView):
     model = Pessoa
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['nome', 'nascimento' , 'email', 'telefone', 'endereco', 'cidade']
+    fields = ['nome', 'nascimento' , 'email', 'endereco', 'cidade']
 
     def get_context_data(self, *args, **kwargs):
         context = super(PessoaUpdate, self).get_context_data(*args, **kwargs)
@@ -201,7 +201,7 @@ class PessoaUpdate(UpdateView):
         return context
 
 class AdminUpdate(UpdateView):
-    model = Pessoa
+    model = Admin
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
     fields = ['cpf', 'carteira_trabalho', 'pessoa']
@@ -216,7 +216,7 @@ class AdminUpdate(UpdateView):
         return context
 
 class LeitorUpdate(UpdateView):
-    model = Pessoa
+    model = Leitor
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
     fields = ['cartao_credito', 'pessoa' ]
@@ -231,7 +231,7 @@ class LeitorUpdate(UpdateView):
         return context
 
 class AcervoUpdate(UpdateView):
-    model = Pessoa
+    model = Acervo
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
     fields = ['titulo','genero','descricao' ]
@@ -245,7 +245,7 @@ class AcervoUpdate(UpdateView):
 
         return context
 class LocacaoUpdate(UpdateView):
-    model = Pessoa
+    model = Locacao
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
     fields = ['valor','data_entrega','data_devolucao','multa' ]
@@ -284,7 +284,6 @@ class CidadeDelete(DeleteView):
     model = Cidade
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['nome', 'estado', 'descricao']
 
     def get_context_data(self, *args, **kwargs):
         context = super(CidadeDelete, self).get_context_data(*args, **kwargs)
@@ -299,7 +298,6 @@ class PessoaDelete(DeleteView):
     model = Pessoa
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['nome', 'nascimento' , 'email', 'telefone', 'endereco', 'cidade']
 
     def get_context_data(self, *args, **kwargs):
         context = super(PessoaDelete, self).get_context_data(*args, **kwargs)
@@ -310,11 +308,8 @@ class PessoaDelete(DeleteView):
 
         return context
 class   AdminDelete(DeleteView):
-    #Define qual o modelo pra essa classe que vai criar o form
     model = Admin
-    #Qual o html que será utilizado
     template_name = "adocao/formulario.html"
-    #Para onde redirecionar o usuário depois de excluir um registro. Informe o nome
     success_url = reverse_lazy("index")
 
 

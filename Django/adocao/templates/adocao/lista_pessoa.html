@@ -21,29 +21,35 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Sigla</th>
-                        <th>Nome</th>
-                        <th>Opções</th>
+                      <th>Nome</th>
+                      <th>Nascimento</th>
+                      <th>E-mail</th>
+                      <th>Endereço</th>
+                      <th>Cidade</th>
+                      <th>Opções</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {% for estado in object_list %}
+                    {% for pessoa in object_list %}
                     <tr>
-                        <td>{{estado.sigla}}</td>
-                        <td>{{estado.nome}}</td>
+                        <td>{{ pessoa.nome }}</td>
+                        <td>{{ pessoa.nascimento }}</td>
+                        <td>{{ pessoa.email }}</td>
+                        <td>{{ pessoa.endereco }}</td>
+                        <td>{{ pessoa.cidade }}</td>
                         <td>
-                            <a href="{% url 'editar-estado' estado.pk %}" class="btn btn-outline-danger btn-sm">
+                            <a href="{% url 'editar-pessoa' pessoa.pk %}" class="btn btn-outline-danger btn-sm">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                             </a>
-                            <a href="{% url 'deletar-estado' estado.pk %}" class="btn btn-outline-danger btn-sm">
+                            <a href="{% url 'deletar-pessoa' pessoa.pk %}" class="btn btn-outline-danger btn-sm">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                             </a>
                         </td>
                     </tr>
                     {% empty %}
                     <tr>
-                        <td colspan="3">Nenhum Estado cadastrado!</td>
+                        <td colspan="3">Nenhuma Pessoa cadastrada!</td>
                     </tr>
                     {% endfor %}
                 </tbody>

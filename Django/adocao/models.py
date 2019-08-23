@@ -12,25 +12,27 @@ class Estado(models.Model):
         return self.sigla + " - " + self.nome
 
 class Cidade(models.Model):
-    nome        = models.CharField(max_length=50)
-    estado      = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    descricao   = models.TextField( blank=True, null=True, verbose_name="Descrição", help_text="Espaço para informações adicionais.")
+    nome = models.CharField(max_length=50)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    descricao = models.TextField(
+        blank=True, null=True, verbose_name="Descrição",
+        help_text="Espaço para colocar qualquer informação."
+    )
 
     def __str__(self):
-        return self.nome + " - " + self.estado.sigla
+        return self.nome + '/' + self.estado.sigla
 
 class Pessoa(models.Model):
 
     nome        = models.CharField(max_length=50, verbose_name="Qual seu nome?", help_text="Digite seu nome completo")
     nascimento  = models.DateField(verbose_name='data de nascimento')
     email       = models.CharField(max_length=100)
-    telefone    = models.CharField(max_length=20, help_text="(DD) XXXX-XXXX")
     endereco    = models.CharField(max_length=100)
 
     cidade      = models.ForeignKey(Cidade, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nome + ' - ' + str(self.nascimento)
+        return "{} - {}/{}".format(self.nome, self.nascimento, self.email)
 
 class Admin(models.Model):
 
@@ -40,16 +42,16 @@ class Admin(models.Model):
     pessoa             = models.ForeignKey(Pessoa, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.pessoa.nome + ' - ' + str(self.cpf)
+        return self.cpf + ' - ' + str(self.pessoa.nome)
 
 class Leitor(models.Model):
 
-    cartao_credito   = models.CharField(max_length=50)
+    cartao = models.CharField(max_length=50)
 
-    pessoa           = models.ForeignKey(Pessoa, on_delete=models.PROTECT)
+    pessoa = models.ForeignKey(Pessoa, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.pessoa.nome + ' - ' + str(self.cartao_credito)
+        return self.cartao + ' - ' + str(self.pessoa.nome)
 
 class Acervo(models.Model):
 
@@ -58,7 +60,7 @@ class Acervo(models.Model):
     descricao    = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nome + ' - ' + str(self.genero)
+        return "{} - {}/{}".format(self.titulo, self.genero, self.descricao)
 
 class Locacao(models.Model):
 
@@ -70,4 +72,4 @@ class Locacao(models.Model):
     acervo        = models.ForeignKey(Acervo, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.acervo.titulo + ' - ' + str(self.valor)
+        return self.valor + ' - ' + str(self.acervo.titulo)
