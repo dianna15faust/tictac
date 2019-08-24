@@ -80,42 +80,12 @@ class PessoaCreate(LoginRequiredMixin, CreateView):
     model = Pessoa
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['nome', 'nascimento' , 'email', 'endereco', 'cidade']
+    fields = ['nome', 'nascimento' , 'email', 'endereco']
 
     def get_context_data(self, *args, **kwargs):
         context = super(PessoaCreate, self).get_context_data(*args, **kwargs)
 
         context['titulo'] = "Cadastro de novas Pessoas"
-        context['botao'] = "Cadastrar"
-        context['classeBotao'] = "btn-danger"
-
-        return context
-
-class AdminCreate(LoginRequiredMixin, CreateView):
-    model = Admin
-    template_name = 'adocao/formulario.html'
-    success_url = reverse_lazy('index')
-    fields = ['cpf', 'carteira_trabalho', 'pessoa' ]
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(AdminCreate, self).get_context_data(*args, **kwargs)
-
-        context['titulo'] = "Cadastro do Admin"
-        context['botao'] = "Cadastrar"
-        context['classeBotao'] = "btn-danger"
-
-        return context
-
-class LeitorCreate(LoginRequiredMixin, CreateView):
-    model = Leitor
-    template_name = 'adocao/formulario.html'
-    success_url = reverse_lazy('index')
-    fields = ['cartao', 'pessoa' ]
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(LeitorCreate, self).get_context_data(*args, **kwargs)
-
-        context['titulo'] = "Cadastro do Leitor"
         context['botao'] = "Cadastrar"
         context['classeBotao'] = "btn-danger"
 
@@ -189,42 +159,12 @@ class PessoaUpdate(UpdateView):
     model = Pessoa
     template_name = 'adocao/formulario.html'
     success_url = reverse_lazy('index')
-    fields = ['nome', 'nascimento' , 'email', 'endereco', 'cidade']
+    fields = ['nome', 'nascimento' , 'email', 'endereco']
 
     def get_context_data(self, *args, **kwargs):
         context = super(PessoaUpdate, self).get_context_data(*args, **kwargs)
 
         context['titulo'] = "Alterar Pessoa"
-        context['botao'] = "Alterar"
-        context['classeBotao'] = "btn-danger"
-
-        return context
-
-class AdminUpdate(UpdateView):
-    model = Admin
-    template_name = 'adocao/formulario.html'
-    success_url = reverse_lazy('index')
-    fields = ['cpf', 'carteira_trabalho', 'pessoa']
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(AdminUpdate, self).get_context_data(*args, **kwargs)
-
-        context['titulo'] = "Alterar Admin"
-        context['botao'] = "Alterar"
-        context['classeBotao'] = "btn-danger"
-
-        return context
-
-class LeitorUpdate(UpdateView):
-    model = Leitor
-    template_name = 'adocao/formulario.html'
-    success_url = reverse_lazy('index')
-    fields = ['cartao_credito', 'pessoa' ]
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(LeitorUpdate, self).get_context_data(*args, **kwargs)
-
-        context['titulo'] = "Alterar Leitor"
         context['botao'] = "Alterar"
         context['classeBotao'] = "btn-danger"
 
@@ -307,37 +247,6 @@ class PessoaDelete(DeleteView):
         context['classeBotao'] = "btn-danger"
 
         return context
-class   AdminDelete(DeleteView):
-    model = Admin
-    template_name = "adocao/formulario.html"
-    success_url = reverse_lazy("index")
-
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(AdminDelete, self).get_context_data(*args, **kwargs)
-
-        context['titulo'] = "Deseja excluir esse registro?"
-        context['botao'] = "Excluir"
-        context['classeBotao'] = "btn-danger"
-
-        return context
-class LeitorDelete(DeleteView):
-    #Define qual o modelo pra essa classe que vai criar o form
-    model = Leitor
-    #Qual o html que será utilizado
-    template_name = "adocao/formulario.html"
-    #Para onde redirecionar o usuário depois de excluir um registro. Informe o nome
-    success_url = reverse_lazy("index")
-
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(LeitorDelete, self).get_context_data(*args, **kwargs)
-
-        context['titulo'] = "Deseja excluir esse registro?"
-        context['botao'] = "Excluir"
-        context['classeBotao'] = "btn-danger"
-
-        return context
 
 class AcervoDelete(DeleteView):
     #Define qual o modelo pra essa classe que vai criar o form
@@ -383,12 +292,7 @@ class CidadeList(ListView):
 class PessoaList(ListView):
     model = Pessoa
     template_name = "adocao/lista_pessoa.html"
-class AdminList(ListView):
-    model = Admin
-    template_name = "adocao/lista_admin.html"
-class LeitorList(ListView):
-    model = Leitor
-    template_name = "adocao/lista_leitor.html"
+
 class AcervoList(ListView):
     model = Acervo
     template_name = "adocao/lista_acervo.html"

@@ -29,29 +29,9 @@ class Pessoa(models.Model):
     email       = models.CharField(max_length=100)
     endereco    = models.CharField(max_length=100)
 
-    cidade      = models.ForeignKey(Cidade, on_delete=models.PROTECT)
 
     def __str__(self):
         return "{} - {}/{}".format(self.nome, self.nascimento, self.email)
-
-class Admin(models.Model):
-
-    cpf                = models.CharField(max_length=11)
-    carteira_trabalho  = models.CharField(max_length=100)
-
-    pessoa             = models.ForeignKey(Pessoa, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.cpf + ' - ' + str(self.pessoa.nome)
-
-class Leitor(models.Model):
-
-    cartao = models.CharField(max_length=50)
-
-    pessoa = models.ForeignKey(Pessoa, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.cartao + ' - ' + str(self.pessoa.nome)
 
 class Acervo(models.Model):
 

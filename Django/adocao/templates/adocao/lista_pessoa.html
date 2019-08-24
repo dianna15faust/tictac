@@ -7,11 +7,11 @@
     <div class="row mt-5">
         <div class="col-lg">
            <h3 class="border-bottom">
-            Lista de Estados Cadastrados
+            Lista de Pessoas Cadastrados
 
             <a href="{% url 'cadastrar-estado' %}" class="float-right btn btn-danger btn-sm">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                Novo Estado
+                Novo Pessoa
             </a>
         </div>
     </div>
@@ -25,7 +25,6 @@
                       <th>Nascimento</th>
                       <th>E-mail</th>
                       <th>Endereço</th>
-                      <th>Cidade</th>
                       <th>Opções</th>
                     </tr>
                 </thead>
@@ -37,7 +36,6 @@
                         <td>{{ pessoa.nascimento }}</td>
                         <td>{{ pessoa.email }}</td>
                         <td>{{ pessoa.endereco }}</td>
-                        <td>{{ pessoa.cidade }}</td>
                         <td>
                             <a href="{% url 'editar-pessoa' pessoa.pk %}" class="btn btn-outline-danger btn-sm">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
