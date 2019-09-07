@@ -17,6 +17,7 @@ from django.views.generic.list import ListView
 #Importa o Mixin para obrigar login
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from braces.views import GroupRequiredMixin
 
 # Create your views here.
 
@@ -42,7 +43,7 @@ class CurriculoView(TemplateView):
 
 ####################################### INSERIR #########################################################################
 
-class EstadoCreate(LoginRequiredMixin, CreateView):
+class EstadoCreate(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     #Define qual o modelo pra essa classe que vai criar o form
     model = Estado
     #Qual o html que será utilizado
@@ -51,6 +52,7 @@ class EstadoCreate(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy("index")
     #Quais campos devem aparecer no formulario?
     fields = ['sigla', 'nome']
+    group_required = u"Administrador"
 
     def get_context_data(self, *args, **kwargs):
         context = super(EstadoCreate, self).get_context_data(*args, **kwargs)
